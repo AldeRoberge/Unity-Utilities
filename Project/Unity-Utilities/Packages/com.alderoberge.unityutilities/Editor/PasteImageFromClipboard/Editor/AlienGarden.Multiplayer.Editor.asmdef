@@ -1,0 +1,16 @@
+{
+    "name": "AlienGarden.Multiplayer.Editor",
+    "rootNamespace": "",
+    "references": ["GUID:c92963abbfa8ba94091b206f53f1cd87"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

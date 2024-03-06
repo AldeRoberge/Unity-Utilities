@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     /// <summary>
     /// Quick utility to extract list of names of selected assets to console.
@@ -14,10 +14,8 @@ namespace Editor
         {
             var sb = new StringBuilder();
 
-            foreach (var selectedObject in Selection.objects)
-            {
+            foreach (var selectedObject in Selection.objects) 
                 sb.AppendLine(selectedObject.name);
-            }
 
             Debug.Log(sb.ToString());
         }

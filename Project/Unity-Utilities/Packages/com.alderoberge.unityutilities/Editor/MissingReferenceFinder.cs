@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     public class MissingReferenceFinder : EditorWindow
     {
@@ -14,7 +14,7 @@ namespace Editor
 
         private Color selectedColor = Color.white;
 
-        public List<Result> results = new List<Result>();
+        public List<Result> results = new();
 
         [MenuItem("Tools/MissingReferenceFinder")]
         public static void ShowWindow()
@@ -23,8 +23,7 @@ namespace Editor
             window.titleContent = new GUIContent("MissingReferenceFinder");
             window.Show();
         }
-
-
+        
         private void OnEnable()
         {
             headStyle.fontSize = 15;
@@ -130,7 +129,7 @@ namespace Editor
             results.Clear();
             if (Selection.activeGameObject)
                 Traverse(Selection.activeGameObject.transform);
-            Debug.Log("> Total Results: " + results.Count);
+            Debug.Log($"> Total Results: {results.Count}");
         }
 
         public void SearchCurrentScene()
@@ -138,7 +137,7 @@ namespace Editor
             results.Clear();
             var gos = SceneManager.GetActiveScene().GetRootGameObjects();
             foreach (var go in gos) Traverse(go.transform);
-            Debug.Log("> Total Results: " + results.Count);
+            Debug.Log($"> Total Results: {results.Count}");
         }
 
         public void SearchAssetFolder()
@@ -154,7 +153,7 @@ namespace Editor
 
                 if (o == null)
                 {
-                    Debug.Log("prefab " + prefab + " null?");
+                    Debug.Log($"prefab {prefab} null?");
                     continue;
                 }
 
@@ -167,7 +166,7 @@ namespace Editor
                 }
             }
 
-            Debug.Log("> Total Results: " + results.Count);
+            Debug.Log($"> Total Results: {results.Count}");
             EditorUtility.ClearProgressBar();
         }
 
@@ -188,7 +187,7 @@ namespace Editor
         {
             results.Add(new Result()
             {
-                address = "Missing Component " + index + " of " + childPath,
+                address = $"Missing Component {index} of {childPath}",
                 Obj = obj,
             });
         }
@@ -197,14 +196,14 @@ namespace Editor
         {
             results.Add(new Result()
             {
-                address = "Missing Prefab for \"" + name + "\" of " + childPath,
+                address = $"Missing Prefab for \"{name}\" of {childPath}",
                 Obj = obj,
             });
         }
 
         private void Traverse(Transform transform, string path = "")
         {
-            var thisPath = path + "/" + transform.name;
+            var thisPath = $"{path}/{transform.name}";
             var components = transform.GetComponents<Component>();
             for (var i = 0; i < components.Length; i++)
             {
@@ -220,7 +219,7 @@ namespace Editor
                 var pt = PrefabUtility.GetPrefabAssetType(t.gameObject);
                 if (pt == PrefabAssetType.MissingAsset)
                 {
-                    AppendTransformResult(path + "/" + transform.name, t.name, transform.gameObject);
+                    AppendTransformResult($"{path}/{transform.name}", t.name, transform.gameObject);
                 }
                 else
                 {

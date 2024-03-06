@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 
-namespace Editor.InputSystem
+namespace AldeRoberge.UnityUtilities.Editor.InputSystem
 {
     public class FindItemUnderMouse : MonoBehaviour
     {
@@ -15,39 +16,26 @@ namespace Editor.InputSystem
 
         void Update()
         {
-            // Get the mouse position in screen space
-            
+            UpdateComponentsUnderMouse();
+            UpdateComponentsUnderMouseNonUI();
+        }
+
+        private void UpdateComponentsUnderMouse()
+        {
             var mousePosition = Mouse.current.position.ReadValue();
-
-            // Find what is under the mouse
-            var pointerEventData = new PointerEventData(EventSystem.current);
-
-            pointerEventData.position = mousePosition;
-
+            var pointerEventData = new PointerEventData(EventSystem.current) { position = mousePosition };
             var raycastResults = new List<RaycastResult>();
-
             EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+            ComponentsUnderMouse = raycastResults.ConvertAll(result => result.gameObject);
+        }
 
-            ComponentsUnderMouse.Clear();
-
-            foreach (var raycastResult in raycastResults)
-            {
-                ComponentsUnderMouse.Add(raycastResult.gameObject);
-            }
-
-
-            // Calculate the ray from the camera through the mouse position
+        private void UpdateComponentsUnderMouseNonUI()
+        {
+            var mousePosition = Mouse.current.position.ReadValue();
             var ray = Camera.main.ScreenPointToRay(mousePosition);
-
-            // Find what is under the mouse
             var hits = Physics.RaycastAll(ray);
-
-            ComponentsUnderMouseNonUI.Clear();
-
-            foreach (var hit in hits)
-            {
-                ComponentsUnderMouseNonUI.Add(hit.collider.gameObject);
-            }
+            ComponentsUnderMouseNonUI = new List<GameObject>(hits.Length);
+            hits.ForEach(hit => ComponentsUnderMouseNonUI.Add(hit.collider.gameObject));
         }
     }
 }

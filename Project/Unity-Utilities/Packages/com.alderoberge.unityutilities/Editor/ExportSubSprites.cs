@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     /**
      * From https://stackoverflow.com/questions/55844965/can-you-export-sliced-sprites-png-images-in-unity.
@@ -13,7 +13,7 @@ namespace AGES.Utils.Editor
         [MenuItem("Assets/Export Sub-Sprites")]
         public static void DoExportSubSprites()
         {
-            var folder = EditorUtility.OpenFolderPanel("Export subsprites into what folder?", "", "");
+            var folder = EditorUtility.OpenFolderPanel("Export sub-sprites into what folder?", "", "");
             foreach (var obj in Selection.objects)
             {
                 var sprite = obj as Sprite;
@@ -37,14 +37,14 @@ namespace AGES.Utils.Editor
             var pixels = sprite.texture.GetPixels((int)r.x, (int)r.y, (int)r.width, (int)r.height);
             output.SetPixels(pixels);
             output.Apply();
-            output.name = sprite.texture.name + " " + sprite.name;
+            output.name = $"{sprite.texture.name} {sprite.name}";
             return output;
         }
 
         private static void SaveSubSprite(Texture2D tex, string saveToDirectory)
         {
             if (!System.IO.Directory.Exists(saveToDirectory)) System.IO.Directory.CreateDirectory(saveToDirectory);
-            System.IO.File.WriteAllBytes(System.IO.Path.Combine(saveToDirectory, tex.name + ".png"), tex.EncodeToPNG());
+            System.IO.File.WriteAllBytes(System.IO.Path.Combine(saveToDirectory, $"{tex.name}.png"), tex.EncodeToPNG());
         }
     }
 }

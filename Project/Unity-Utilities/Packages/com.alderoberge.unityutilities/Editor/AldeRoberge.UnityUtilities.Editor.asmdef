@@ -1,6 +1,6 @@
 {
   "name": "AldeRoberge.UnityUtilities.Editor",
-  "rootNamespace": "",
+  "rootNamespace": "AldeRoberge.UnityUtilities",
   "references": [
     "Unity.Addressables",
     "Unity.Addressables.Editor",

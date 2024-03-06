@@ -3,7 +3,7 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace AldeRoberge.UnityUtilities.Editor.Addressables
 {
     public static class AddressableEditorExtension
     {

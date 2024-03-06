@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Tools
+namespace AldeRoberge.UnityUtilities.Editor.Tools
 {
     public class uGUITools : MonoBehaviour
     {

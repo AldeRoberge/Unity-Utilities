@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.ReorderableList
+namespace AldeRoberge.UnityUtilities.Editor.ReorderableList
 {
     public class ReorderableListUtil
     {

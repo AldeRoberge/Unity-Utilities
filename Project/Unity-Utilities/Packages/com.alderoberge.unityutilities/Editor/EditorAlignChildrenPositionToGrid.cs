@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     public class EditorAlignChildrenPositionToGrid : MonoBehaviour
     {

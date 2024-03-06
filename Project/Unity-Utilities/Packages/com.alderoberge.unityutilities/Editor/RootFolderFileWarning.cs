@@ -3,7 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     /// <summary>
     /// Warns the user when certain files are in the root of the project.

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Editor.ReorderableList
+namespace AldeRoberge.UnityUtilities.Editor.ReorderableList
 {
     public class ReorderableListColumn<T>
     {

@@ -1,6 +1,6 @@
 {
     "name": "AldeRoberge.UnityUtilities.Runtime",
-    "rootNamespace": "",
+    "rootNamespace": "AldeRoberge.UnityUtilities",
     "references": [
         "Unity.TextMeshPro",
         "Unity.Addressables",

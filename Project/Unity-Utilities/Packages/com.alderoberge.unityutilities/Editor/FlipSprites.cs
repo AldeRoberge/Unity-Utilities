@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace AldeRoberge.UnityUtilities.Editor
 {
     public static class FlipSprites
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Tools
+namespace AldeRoberge.UnityUtilities.Editor.Tools
 {
     public class ScriptableObjectUtility : EditorWindow
     {
@@ -40,7 +40,7 @@ namespace Editor.Tools
                     var type = AppDomain.CurrentDomain.GetAssemblies()
                                    .SelectMany(x => x.GetTypes())
                                    .FirstOrDefault(x => x.Name == classname);
-                    if (type == null) Debug.LogError("Could not find type with class name: "+classname);
+                    if (type == null) Debug.LogError($"Could not find type with class name: {classname}");
                     else CreateAsset(type);
                     Close();
                 }
@@ -72,7 +72,7 @@ namespace Editor.Tools
                 path = path.Replace(Path.GetFileName(AssetDatabase.GetAssetPath(Selection.activeObject)), "");
             }
 
-            var assetPathAndName = AssetDatabase.GenerateUniqueAssetPath(path + "/"+t.Name + ".asset");
+            var assetPathAndName = AssetDatabase.GenerateUniqueAssetPath($"{path}/{t.Name}.asset");
 
             AssetDatabase.CreateAsset(asset, assetPathAndName);
 
