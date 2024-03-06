@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace Editor
 {
     public static class FlipSprites
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-namespace AGES.Utils.Editor
+namespace Editor.InputSystem
 {
     public class FindItemUnderMouse : MonoBehaviour
     {

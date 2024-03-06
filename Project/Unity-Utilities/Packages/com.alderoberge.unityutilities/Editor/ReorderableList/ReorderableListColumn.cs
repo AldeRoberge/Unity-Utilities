@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AGES.Utils.Editor.ReorderableList
+namespace Editor.ReorderableList
 {
     public class ReorderableListColumn<T>
     {

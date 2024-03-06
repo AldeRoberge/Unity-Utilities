@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace Editor
 {
     // Creates a right click menu for Texture2D assets to export them to a PNG file
     public class Texture2DToPNG

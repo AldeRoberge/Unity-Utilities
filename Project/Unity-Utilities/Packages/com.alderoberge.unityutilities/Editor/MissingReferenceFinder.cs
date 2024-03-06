@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace AGES.Utils.Editor
+namespace Editor
 {
     public class MissingReferenceFinder : EditorWindow
     {

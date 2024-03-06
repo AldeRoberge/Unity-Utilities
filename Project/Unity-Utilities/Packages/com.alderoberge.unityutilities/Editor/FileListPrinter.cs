@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor
+namespace Editor
 {
     /// <summary>
     /// Quick utility to extract list of names of selected assets to console.

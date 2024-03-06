@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor.Tools
+namespace Editor.Tools
 {
     public class ResourcesEnumerator : EditorWindow
     {

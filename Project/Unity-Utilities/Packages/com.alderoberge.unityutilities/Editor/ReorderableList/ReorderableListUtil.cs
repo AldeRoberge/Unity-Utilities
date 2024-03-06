@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace AGES.Utils.Editor.ReorderableList
+namespace Editor.ReorderableList
 {
     public class ReorderableListUtil
     {
