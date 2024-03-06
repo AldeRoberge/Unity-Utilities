@@ -1,0 +1,22 @@
+{
+  "displayName": "Unity Utilities",
+  "name": "com.alderoberge.unityutilities",
+  "version": "0.0.1",
+  "unity": "2020.3",
+  "description": "Collection of Unity Utilities to be shared between projects.",
+  "keywords": [
+    "Utilities",
+    "Utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AldeRoberge/Unity-Utilities"
+  },
+  "author": {
+    "name": "Alde Roberge",
+    "email": "alderoberge@gmail.com",
+    "url": "https://alderobrge.com"
+  },
+  "category": "Libraries",
+  "type": "tool"
+}
