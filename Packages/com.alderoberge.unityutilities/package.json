@@ -1,7 +1,7 @@
 {
   "displayName": "Unity Utilities",
   "name": "com.alderoberge.unityutilities",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "unity": "2020.3",
   "description": "Collection of Unity Utilities to be shared between projects.",
   "keywords": [
