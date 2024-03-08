@@ -10,6 +10,7 @@ namespace AldeRoberge.UnityUtilities.Editor
         [Button("Align Children Position To Grid")]
         public void AlignChildrensPositionToGrid()
         {
+            
             foreach (Transform child in transform)
             {
                 child.localPosition = new Vector3(Mathf.Round(child.localPosition.x), Mathf.Round(child.localPosition.y), Mathf.Round(child.localPosition.z));
